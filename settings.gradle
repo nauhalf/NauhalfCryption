@@ -1,0 +1,3 @@
+rootProject.name = "NauhalfCryption"
+include ':app'
+include ':nauhalfcryption'
