@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalcrytion
+package com.nauhalf.nauhalfcryption
 
 import android.app.Application
 import android.content.SharedPreferences

@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalcrytion
+package com.nauhalf.nauhalfcryption
 
 import android.app.Application
 
@@ -6,7 +6,7 @@ object NauhalfCryption {
 
     var encSharedPrefs: EncryptedSharedPrefs? = null
     const val NOT_INIT_MESSAGE =
-        "NauhalfCryption is not initialized yet. Please call NauhalfCryption.init(applicationContext) in App module"
+        "NauhalfCryption is not initialized yet. Please call NauhalfCryption.init(application) in App module"
 
     fun init(app: Application) {
         encSharedPrefs = null

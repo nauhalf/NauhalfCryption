@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalcrytion
+package com.nauhalf.nauhalfcryption
 
 import com.google.gson.Gson
 import java.lang.reflect.Type
