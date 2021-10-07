@@ -1,6 +1,7 @@
 package com.nauhalf.nauhalfcryptionsample
 
 import android.app.Application
+import com.nauhalf.nauhalfcryption.NauhalfCryption
 
 class App: Application() {
 

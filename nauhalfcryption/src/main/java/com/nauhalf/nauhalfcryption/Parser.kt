@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalfcryptionsample
+package com.nauhalf.nauhalfcryption
 
 import java.lang.reflect.Type
 
