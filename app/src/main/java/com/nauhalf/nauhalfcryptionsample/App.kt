@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalfcryption
+package com.nauhalf.nauhalfcryptionsample
 
 import android.app.Application
 

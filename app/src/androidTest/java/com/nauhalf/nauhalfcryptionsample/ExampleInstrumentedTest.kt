@@ -1,4 +1,4 @@
-package com.nauhalf.nauhalfcryption
+package com.nauhalf.nauhalfcryptionsample
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
