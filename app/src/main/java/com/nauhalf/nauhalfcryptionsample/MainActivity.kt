@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        NauhalfCryption.put("name", "dzakdzaks")
-        Toast.makeText(this, NauhalfCryption.get<String>("name").toString(), Toast.LENGTH_LONG).show()
+        NauhalfCryption.put("name", 10.5)
+        Toast.makeText(this, NauhalfCryption.get<Double>("name").toString(), Toast.LENGTH_LONG).show()
         Log.d("walwaw", NauhalfCryption.get<String>("name").toString())
     }
 }

@@ -54,10 +54,10 @@ open class EncryptedSharedPrefs(context: Context) {
         return when (T::class) {
             String::class -> encPrefs.getString(key, "")
             Boolean::class -> encPrefs.getBoolean(key, false)
-            Float::class -> encPrefs.getFloat(key, -1f)
-            Double::class -> encPrefs.getFloat(key, -1f)
-            Int::class -> encPrefs.getInt(key, -1)
-            Long::class -> encPrefs.getLong(key, -1L)
+            Float::class -> encPrefs.getFloat(key, 0f)
+            Double::class -> encPrefs.getDouble(key, 0.0)
+            Int::class -> encPrefs.getInt(key, 0)
+            Long::class -> encPrefs.getLong(key, 0L)
             else -> {
                 val value = encPrefs.getString(key, "")
                 val type = object : TypeToken<T?>() {}.type
@@ -76,7 +76,7 @@ open class EncryptedSharedPrefs(context: Context) {
             is String -> editor.putString(key, data)
             is Boolean -> editor.putBoolean(key, data)
             is Float -> editor.putFloat(key, data)
-            is Double -> editor.putFloat(key, data.toFloat())
+            is Double -> editor.putDouble(key, data)
             is Int -> editor.putInt(key, data)
             is Long -> editor.putLong(key, data)
             else -> {
