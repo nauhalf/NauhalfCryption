@@ -1,6 +1,6 @@
 package com.nauhalf.nauhalfcryption
 
-import android.app.Application
+import android.content.Context
 
 object NauhalfCryption {
 
@@ -8,9 +8,13 @@ object NauhalfCryption {
     const val NOT_INIT_MESSAGE =
         "NauhalfCryption is not initialized yet. Please call NauhalfCryption.init(application) in App module"
 
-    fun init(app: Application) {
+    fun initSingleton(context: Context) {
         encSharedPrefs = null
-        encSharedPrefs = EncryptedSharedPrefs(app)
+        encSharedPrefs = EncryptedSharedPrefs(context)
+    }
+
+    fun build(context: Context): EncryptedSharedPrefs{
+        return EncryptedSharedPrefs(context)
     }
 
     fun destroy() {
@@ -35,13 +39,13 @@ object NauhalfCryption {
         }.put(key, data)
     }
 
-    fun delete(key: String?): Boolean? {
+    fun delete(key: String?): Boolean {
         return requireNotNull(encSharedPrefs) {
             NOT_INIT_MESSAGE
         }.delete(key)
     }
 
-    fun deleteAll(): Boolean? {
+    fun deleteAll(): Boolean {
         return requireNotNull(encSharedPrefs) {
             NOT_INIT_MESSAGE
         }.deleteAll()
@@ -53,7 +57,7 @@ object NauhalfCryption {
         }.count()
     }
 
-    fun contains(key: String?): Boolean? {
+    fun contains(key: String?): Boolean {
         return requireNotNull(encSharedPrefs) {
             NOT_INIT_MESSAGE
         }.contains(key)

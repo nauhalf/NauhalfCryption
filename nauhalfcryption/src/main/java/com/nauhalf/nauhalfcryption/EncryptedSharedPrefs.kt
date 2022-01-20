@@ -1,6 +1,6 @@
 package com.nauhalf.nauhalfcryption
 
-import android.app.Application
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
@@ -12,7 +12,8 @@ import androidx.security.crypto.MasterKey.DEFAULT_MASTER_KEY_ALIAS
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-open class EncryptedSharedPrefs(app: Application) {
+open class EncryptedSharedPrefs(context: Context) {
+
 
     // Since security-crypto 1.1.0-aplha01
     private val masterKey = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -24,11 +25,11 @@ open class EncryptedSharedPrefs(app: Application) {
             .setKeySize(DEFAULT_AES_GCM_MASTER_KEY_SIZE)
             .build()
 
-        MasterKey.Builder(app.applicationContext)
+        MasterKey.Builder(context)
             .setKeyGenParameterSpec(spec)
             .build()
     } else {
-        MasterKey.Builder(app.applicationContext)
+        MasterKey.Builder(context)
             .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
             .build()
     }
@@ -36,7 +37,7 @@ open class EncryptedSharedPrefs(app: Application) {
     val parser = GsonParser(Gson())
 
     val encPrefs = EncryptedSharedPreferences.create(
-        app.applicationContext,
+        context,
         "NauhalfCryption",
         masterKey,
         EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,

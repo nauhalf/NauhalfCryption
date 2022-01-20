@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.nauhalf.nauhalfcryption.NauhalfCryption
-import com.nauhalf.nauhalfcryption.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
