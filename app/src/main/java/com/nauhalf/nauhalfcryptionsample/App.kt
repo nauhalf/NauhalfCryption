@@ -7,7 +7,7 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        NauhalfCryption.init(this.applicationContext)
+        NauhalfCryption.initSingleton(this.applicationContext)
     }
 
 }
